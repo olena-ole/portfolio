@@ -38,6 +38,10 @@
 
 /* General styles */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -155,6 +159,29 @@ header {
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
 }
 
+.nav-open .nav {
+    transform: translateX(0%);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::after {
+    display: none;
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg);
+    top: 0px;
+}
+
+
+
 .nav__list {
     list-style: none;
     display: flex;
@@ -199,7 +226,7 @@ header {
 .hamburger::after {
     width: 2em;
     height: 3px;
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     border-radius: 1em;
     transform: transition 250ms ease-in-out;
 }
